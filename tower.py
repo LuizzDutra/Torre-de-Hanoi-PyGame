@@ -6,7 +6,8 @@ class Piece:
     def __init__(self, size: int):
         self.size = size
         self.sprite = pg.Surface((self.WIDTH*self.size, self.HEIGHT))
-        self.sprite.fill((255, 255, 255))
+        self.colors = [(255,0,0), (0,255,0), (0,0,255), (0,255, 255), (180, 0, 255)]
+        self.sprite.fill(self.colors[(size-1)%len(self.colors)])
 
 
 class Tower:
